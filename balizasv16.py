@@ -1,4 +1,5 @@
 import requests
+import time
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
@@ -10,7 +11,7 @@ def format_time(iso_str):
         return "?"
 
 #https://nap.dgt.es/dataset/incidencias-dgt-datex2-v3-6
-url = "https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v36.xml"
+url = f"https://nap.dgt.es/datex2/v3/dgt/SituationPublication/datex2_v36.xml?t={int(time.time())}"
 
 try:
     resp = requests.get(url, stream=True, timeout=30)
