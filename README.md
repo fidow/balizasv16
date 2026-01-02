@@ -23,14 +23,9 @@ Script en Python que descarga y procesa el feed **DATEX II v3.6** de incidencias
 
 ## Requisitos
 
-- Python **3.9+** (recomendado 3.10+)
+- Python **3.9+**
 - Dependencia:
   - `requests`
-
-## Instalación
-> ```bash
-> pip install requests
-> ```
 
 ## Uso
 
