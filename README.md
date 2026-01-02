@@ -21,14 +21,6 @@ Script en Python que descarga y procesa el feed **DATEX II v3.6** de incidencias
    - **PROVINCIA** (`province`)
 5. Imprime el total de registros listados como **Total Activas**.
 
-### Mapeo de sentido
-
-`tpegDirectionRoad` se transforma a:
-
-- `positive` → **Creciente**
-- `negative` → **Decreciente**
-- `both` → **Ambos**
-
 ## Requisitos
 
 - Python **3.9+** (recomendado 3.10+)
@@ -36,21 +28,6 @@ Script en Python que descarga y procesa el feed **DATEX II v3.6** de incidencias
   - `requests`
 
 ## Instalación
-
-```bash
-git clone https://github.com/fidow/balizasv16.git
-cd balizasv16
-python -m venv .venv
-# Windows:
-.venv\Scripts\activate
-# Linux/macOS:
-# source .venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-> Si no existe `requirements.txt`, basta con:
->
 > ```bash
 > pip install requests
 > ```
@@ -70,20 +47,3 @@ ID         FECHA        VIA          PK       SENTIDO          MUNICIPIO        
 
 Total Activas: 1
 ```
-
-*(Los valores son ilustrativos.)*
-
-## Notas
-
-- El script usa `requests.get(..., stream=True, timeout=30)` y limpia nodos con `elem.clear()` para optimizar memoria.
-- Si `overallStartTime` viene con sufijo `Z`, se interpreta como UTC (se convierte a `+00:00`).
-- Si algún campo no existe o viene vacío, se imprime `?`.
-- La disponibilidad del feed depende del servicio del NAP de la DGT.
-
-## Estructura del proyecto
-
-- `balizasv16.py` — Script principal.
-
-## Licencia
-
-No se ha especificado licencia en el repositorio. Si vas a publicar o redistribuir, añade un fichero `LICENSE` (por ejemplo MIT) y actualiza esta sección.
